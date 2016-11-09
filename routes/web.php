@@ -12,5 +12,11 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    $ip = request()->ip();
+
+    if(request()->wantsJson()) {
+        return response()->json($ip);
+    }
+
+    return view('ip')->withIp($ip);
 });
