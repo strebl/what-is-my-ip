@@ -14,7 +14,7 @@
 Route::get('/', function () {
     $ip = request()->ip();
 
-    if(request()->wantsJson()) {
+    if (request()->wantsJson()) {
         return response()->json($ip);
     }
 
